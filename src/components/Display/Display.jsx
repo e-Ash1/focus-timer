@@ -4,15 +4,17 @@ import style from './display.css';
 
 
 
-function Display () {
+function Display ({ time }) {
   
+  const minutes=Math.floor(time/60).toString().padStart(2, '0');
+  const seconds=(time%60).toString().padStart(2,'0');
+  const timeString = `${minutes}:${seconds}`;
+
   
-
-
 
   return (
-    <div>
-      <h2>Display</h2>
+    <div className='display'>
+      {timeString}
     </div>
   )
 }
