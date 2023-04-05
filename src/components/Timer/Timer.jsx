@@ -67,23 +67,30 @@ function toggleMode(){
 
 return (
   <div className="Timer">
-   
-    <h1 className='timer-text'>{mode === 'focus' ? 'Focus' : 'Break'}</h1>
+    
+    <div className='timer-text-container'>
+      <h1 className='timer-text'>{mode === 'focus' ? 'Focus' : 'Break'}</h1>
+    </div>
+
+    <div className='display-container'>
     <Display time={time} />
-    <div className="Timer-controls">
-      <button className='bt-control' onClick={handleStart} disabled={isRunning}>
+    </div>
+    
+    <div className="timer-control-container">
+      <button className='start-btn' onClick={handleStart} disabled={isRunning}>
         Start
       </button>
-      <button className='bt-control' onClick={handlePause} disabled={!isRunning}>
+      <button className='stop-btn' onClick={handlePause} disabled={!isRunning}>
         Stop
       </button>
-      <button className='bt-control' onClick={handleReset} disabled={isRunning}>
+      <button className='reset-btn' onClick={handleReset} disabled={isRunning}>
         Reset
       </button>
-      <button className='bt-control' onClick={toggleMode}>
+      <button className='toggle-btn' onClick={toggleMode}>
         Switch to {mode === 'focus' ? 'Break' : 'Focus'}
       </button>
     </div>
+  
   </div>
 );
 }

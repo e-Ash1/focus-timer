@@ -1,0 +1,65 @@
+
+body{
+    background: radial-gradient(circle, #fd746c, #ff9068);
+}
+
+.Timer{ 
+  
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  height: 100vh;
+  flex-direction:column;
+  
+
+}
+
+.timer-text-container{
+    margin-bottom:1em;
+}
+.timer-text{
+    font-size: 5em;
+    color: white;
+}
+
+.display-container{
+    margin-bottom:1em;
+}
+
+.display{
+    font-size:3em;
+    color:white;
+    
+}
+
+.timer-control-container{
+    margin: 1em;
+}
+
+.start-btn, .stop-btn, .reset-btn, .toggle-btn{
+    
+    color: #ffffff;
+    background-color: #fd746c;
+    background-image: linear-gradient(to bottom, #fd746c, #ff9068);
+    margin: 1em;
+    padding: 0.5em 1em; 
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .start-btn:hover, .stop-btn:hover, .reset-btn:hover, .toggle-btn:hover{
+    background-color: #ff9068;
+    color:#ffffff;
+    transform: scale(1.1);
+
+  }
+
+  .toggle-btn:focus, .toggle-btn:break {
+    outline: none;
+  }
