@@ -25,12 +25,7 @@ function UseInterval (callback,delay){
       }
   },[delay]);
 
-  return(
-    <div>
-      
-    </div>
-
-  )
+  
 }
 
     

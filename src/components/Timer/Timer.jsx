@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useEffect } from 'react';
 import style from './timer.css';
 import Display from '../Display/Display';
 import UseInterval from '../UseInterval/UseInterval';
@@ -8,10 +9,10 @@ import UseInterval from '../UseInterval/UseInterval';
 
 
 function Timer (props) {
+
 //Section of code determines whether the timer is within focus/break mode
 const { focusDuration, breakDuration } = props;
 
-//Create two useStates defining remainingTime and isRunning 
 const[isRunning, setIsRunning]=useState(false);
 
 //Section of code toggles between focus/break mode
@@ -36,12 +37,11 @@ const getDefaultTime = (mode)=>{
 }
 
 
-//Start logic
+  //Arrow functions that set control functionality to buttons
 const handleStart=()=>{
   setIsRunning(true);
 };
 
-//Stop logic
 const handlePause=()=>{
   setIsRunning(false);
 };
@@ -53,7 +53,6 @@ const handleReset=()=>{
   setIsRunning(false);
 };
 
-//Toggle switch between focus/break durations
 function toggleMode(){
   if(mode==='focus'){
     setMode('break');
@@ -65,21 +64,23 @@ function toggleMode(){
   setIsRunning(false);
 }
 
+
 return (
   <div className="Timer">
-    <h1>{mode === 'focus' ? 'Focus' : 'Break'}</h1>
+   
+    <h1 className='timer-text'>{mode === 'focus' ? 'Focus' : 'Break'}</h1>
     <Display time={time} />
     <div className="Timer-controls">
-      <button onClick={handleStart} disabled={isRunning}>
+      <button className='bt-control' onClick={handleStart} disabled={isRunning}>
         Start
       </button>
-      <button onClick={handlePause} disabled={!isRunning}>
+      <button className='bt-control' onClick={handlePause} disabled={!isRunning}>
         Stop
       </button>
-      <button onClick={handleReset} disabled={isRunning}>
+      <button className='bt-control' onClick={handleReset} disabled={isRunning}>
         Reset
       </button>
-      <button onClick={toggleMode}>
+      <button className='bt-control' onClick={toggleMode}>
         Switch to {mode === 'focus' ? 'Break' : 'Focus'}
       </button>
     </div>
